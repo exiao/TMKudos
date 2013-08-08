@@ -22,7 +22,7 @@ subject varchar(511),
 body text
 )engine=innodb default charset=utf8;"""
 
-def employee(models.Model):
+class Employee(models.Model):
     EXEC = 'Executive'
     HR = 'Human Resources'
     APPENG = 'Application Engineering'
@@ -41,14 +41,16 @@ def employee(models.Model):
     )
 
     dept = models.CharField(choices=DEPT_CHOICES,
-                              default=EXEC)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+                              default=EXEC, max_length=25)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     email = models.EmailField()
 
-def kudos(models.Model):
-    from_employee = models.ForeignKey("employee")
-    to_employee = models.ForeignKey("employee")
+
+class Kudos(models.Model):
+    from_employee = models.ForeignKey('employee', related_name='sent_kudos')
+    to_employee = models.ForeignKey('employee', related_name='received_kudos')
     created = models.DateTimeField(default=datetime.datetime.now())
     subject = models.CharField(max_length=511)
     body = models.TextField()
+

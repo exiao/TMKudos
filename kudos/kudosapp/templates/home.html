@@ -1,3 +1,5 @@
 <html>
-    <p>Hi {{ y }}</p>
+    {% for kudos in kudos_set %}
+        <p>{{ kudos.subject }}</p>
+    {% endfor %}
 </html>
