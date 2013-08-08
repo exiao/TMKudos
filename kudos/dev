@@ -1,2 +1,5 @@
+pwd
+echo "yes" | python manage.py collectstatic
+python manage.py validate
 python manage.py syncdb
 python manage.py runserver
