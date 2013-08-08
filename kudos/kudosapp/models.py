@@ -45,7 +45,6 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
-    flagged = models.BooleanField(default=False)
 
 
 class Kudos(models.Model):
@@ -54,4 +53,5 @@ class Kudos(models.Model):
     created = models.DateTimeField(default=datetime.datetime.now())
     subject = models.CharField(max_length=511)
     body = models.TextField()
+    flagged = models.BooleanField(default=False)
 
