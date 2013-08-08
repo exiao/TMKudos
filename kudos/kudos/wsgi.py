@@ -14,6 +14,11 @@ framework.
 
 """
 import os
+import sys
+sys.path.append(os.path.dirname(__file__))
+sys.path.append('/var/www/')
+sys.path.append('/var/www/TMKudos')
+sys.path.append('/var/www/TMKudos/kudos')
 
 # We defer to a DJANGO_SETTINGS_MODULE already in the environment. This breaks
 # if running multiple sites in the same mod_wsgi process. To fix this, use
