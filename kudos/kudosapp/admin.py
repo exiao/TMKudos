@@ -6,7 +6,7 @@ class EmployeeAdmin(admin.ModelAdmin):
     list_display = ('first_name','last_name', 'dept', 'location', 'email')
     search_fields = ('first_name','last_name', 'dept', 'location', 'email')
 
-class KudosAdmin(admin.Admin):
+class KudosAdmin(admin.ModelAdmin):
     list_display = ()
 
 admin.site.register(Kudos)
