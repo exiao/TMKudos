@@ -58,7 +58,7 @@
 		<div class="row">
 			<div class="col-lg-1"></div>
 			<div class="col-lg-2">
-				<input class="btn btn-success inline-block" value="Department">
+				<input class="btn btn-success inline-block" value="Sender Type">
 			</div>
 			<div class="col-lg-2">
 				<input class="btn btn-success inline-block" value="Sender Type">
@@ -66,7 +66,10 @@
 			<div class="col-lg-2">
 				<input class="btn btn-success inline-block" value="Sort By">
 			</div>
-			<div class="col-lg-4">
+			<div class="col-lg-2">
+				<input class="btn btn-success inline-block" value="Category">
+			</div>
+			<div class="col-lg-2">
 				<input class="btn btn-primary inline-block" value="Search">
 			</div>
 			<div class="col-lg-1"></div>
@@ -92,9 +95,12 @@
 		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
-			<div class="col-lg-8">
+			<div class="col-lg-6">
 		        <div class="main-row">{{ kudos.subject }}</div>
 			</div>
+			<div class="col-lg-2">
+		        {{ kudos.created.date }} {{ kudos.created.time }}
+		    </div>
 			<div class="col-lg-1"></div>
 		</div>
 		<div class="row main-row-container">
@@ -104,9 +110,12 @@
 		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
-			<div class="col-lg-8">
+			<div class="col-lg-6">
 		        <div class="main-row">{{ kudos.subject }}</div>
 			</div>
+			<div class="col-lg-2">
+		        {{ kudos.created.date }} {{ kudos.created.time }}
+		    </div>
 			<div class="col-lg-1"></div>
 		</div>
 		<div class="row main-row-container">
@@ -116,9 +125,12 @@
 		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
-			<div class="col-lg-8">
+			<div class="col-lg-6">
 		        <div class="main-row">{{ kudos.subject }}</div>
 			</div>
+			<div class="col-lg-2">
+		        {{ kudos.created.date }} {{ kudos.created.time }}
+		    </div>
 			<div class="col-lg-1"></div>
 		</div>
 		<div class="row main-row-container">
@@ -128,9 +140,12 @@
 		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
-			<div class="col-lg-8">
+			<div class="col-lg-6">
 		        <div class="main-row">{{ kudos.subject }}</div>
 			</div>
+			<div class="col-lg-2">
+		        {{ kudos.created.date }} {{ kudos.created.time }}
+		    </div>
 			<div class="col-lg-1"></div>
 		</div>
 		<div class="row main-row-container">
@@ -140,9 +155,12 @@
 		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
-			<div class="col-lg-8">
+			<div class="col-lg-6">
 		        <div class="main-row">{{ kudos.subject }}</div>
 			</div>
+			<div class="col-lg-2">
+		        {{ kudos.created.date }} {{ kudos.created.time }}
+		    </div>
 			<div class="col-lg-1"></div>
 		</div>
 	    {% endfor %}
