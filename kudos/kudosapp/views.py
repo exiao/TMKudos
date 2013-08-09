@@ -51,16 +51,16 @@ def basic_search(request, template='search.html', load_all=True, form_class=Mode
           The query received by the form.
     """
     query = ''
-    #results = EmptySearchQuerySet()
+    results = EmptySearchQuerySet()
 
 
-    dept = request.GET.get('dept')
+    """dept = request.GET.get('dept')
     sort_type = request.GET.get('type')
     category = request.GET.get('category')
     print(category)
 
     results = SearchQuerySet()
-    results.filter(content=category)
+    results.filter(content=category)"""
 
     if request.GET.get('q'):
         form = form_class(request.GET, searchqueryset=searchqueryset, load_all=load_all)
