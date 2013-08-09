@@ -44,7 +44,7 @@ class Employee(models.Model):
 
     def hashcode(self):
         import md5
-        return md5.new(self.first_name)
+        return str(md5.new(self.first_name))
 
     def get_full_name(self):
         return self.first_name + ' ' + self.last_name
