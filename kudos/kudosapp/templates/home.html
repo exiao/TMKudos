@@ -3,9 +3,9 @@
 	<title>TubeMogul Kudos</title>
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" />
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
-	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js" /></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.js" /></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easing.1.3.js" /></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js" /></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/main.js" /></script>
 </head>
 <body>
@@ -116,7 +116,7 @@
                 </div>
 			</div>
 			<div class="col-lg-2">
-				<input class="btn btn-primary inline-block" type="submit" value="Search">
+				<input class="btn btn-primary inline-block" id="search-button" value="Search">
 			</div>
 			<div class="col-lg-1"></div>
 		</div>
@@ -149,9 +149,7 @@
 	</div>
 	<!-- END FOOTER -->
 	<div class="divider-60"></div>
-	<script type="text/javascript" src="{{ STATIC_URL }}js/home.js"></script>
-	<script type="text/javascript">
-		$('#main-search').val("{{ query }}");
+	<script type="text/javascript" src="{{ STATIC_URL }}js/home.js">
 	</script>
 </body>
 </html>

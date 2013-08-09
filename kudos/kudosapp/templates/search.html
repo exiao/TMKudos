@@ -73,6 +73,9 @@
         <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
         {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
     </div>
+    <script type="text/javascript">
+        $('#main-search').val("{{ query }}");
+    </script>
     <div class="col-lg-1"></div>
 </div>
 {% endfor %}

@@ -16,12 +16,12 @@ RESULTS_PER_PAGE = getattr(settings, 'HAYSTACK_SEARCH_RESULTS_PER_PAGE', 20)
 
 
 def home(request):
-    kudos_set = Kudos.objects.order_by("created")[:10]
+    """kudos_set = Kudos.objects.order_by("created")[:10]
     data = {}
-    data['kudos_set'] = kudos_set
-    return render_to_response('home.html', data, context_instance=RequestContext(request))
+    data['kudos_set'] = kudos_set"""
+    return render_to_response('home.html', context_instance=RequestContext(request))
 
-def basic_search(request, template='home.html', load_all=True, form_class=ModelSearchForm, searchqueryset=None, context_class=RequestContext, extra_context=None, results_per_page=None):
+def basic_search(request, template='search.html', load_all=True, form_class=ModelSearchForm, searchqueryset=None, context_class=RequestContext, extra_context=None, results_per_page=None):
     """
     A more traditional view that also demonstrate an alternative
     way to use Haystack.
