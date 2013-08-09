@@ -55,8 +55,12 @@
 				<div id="main-results">
 				{% for employee in employee_set %}
 				<div class="employee-row">
+					{% if employee.image_exists %}
 						<img class="employee-pic" src="{{ STATIC_URL }}images/profiles/{{ employee.get_image_file }}" />
-					<span class="employee-text">{{ employee.image_exists }}</span>
+					{% else %}
+						<img class="employee-pic" src="http://gravatar.com/avatar/{{ employee.hashcode }}?d=wavatar" />
+					{% endif %}
+					<span class="employee-text">{{ employee.get_full_name }}</span>
 					<span class="employee-text">
 						Sent: 
 						{% if emplyee.sent_kudos %}
