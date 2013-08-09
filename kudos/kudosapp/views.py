@@ -23,9 +23,9 @@ def home(request):
 
 
 def dir(request):
-    kudos_set = Kudos.objects.order_by("created")[:10]
+    employee_set = Employee.objects.order_by('first_name')
     data = {}
-    data['kudos_set'] = kudos_set
+    data['employee_set'] = employee_set
     return render_to_response('dir.html', data, context_instance=RequestContext(request))
 
 
