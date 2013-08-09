@@ -53,23 +53,67 @@
 		<div class="row">
 			<div class="col-lg-1"></div>
 			<div class="col-lg-10">
-				<input id="main-search" type="text" name="q" class="form-control" placeholder="E.g. Brett Wilson, CTO, AdOps" >
+				<input id="main-search" type="text" name="q" class="form-control" placeholder="E.g. Brett Wilson, CEO, AdOps" >
 			</div>
 			<div class="col-lg-1"></div>
 		</div>
 		<div class="row">
 			<div class="col-lg-1"></div>
 			<div class="col-lg-2">
-				<input class="btn btn-success inline-block" value="Department">
+                <div class="btn-group" style="width: 100%;">
+                    <button id="btn-dept" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
+                        <span class="btn-option">Department</span> <span class="caret"></span>
+                    </button>
+                    <ul class="drop-menu hidden">
+                        <li class="dropdown-top" style="padding: 14px 14px;"><span>Department</span></li>
+                        <li style="padding: 14px 14px;"><span>Automated</span></li>
+                        <li style="padding: 14px 14px;"><span>Manual</span></li>
+                        <li style="padding: 14px 14px;"><span>Unit</span></li>
+                        <li class="dropdown-bott" style="padding: 14px 14px;"><span>All</span></li>
+                    </ul>
+                </div>
 			</div>
 			<div class="col-lg-2">
-				<input class="btn btn-success inline-block" value="Sender Type">
+                <div class="btn-group" style="width: 100%;">
+                    <button id="btn-type" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
+                        <span class="btn-option">Sender Type</span> <span class="caret"></span>
+                    </button>
+                    <ul class="drop-menu hidden">
+                        <li class="dropdown-top" style="padding: 14px 14px;"><span>Search Type</span></li>
+                        <li style="padding: 14px 14px;"><span>Automated</span></li>
+                        <li style="padding: 14px 14px;"><span>Manual</span></li>
+                        <li style="padding: 14px 14px;"><span>Unit</span></li>
+                        <li class="dropdown-bott" style="padding: 14px 14px;"><span>All</span></li>
+                    </ul>
+                </div>
 			</div>
 			<div class="col-lg-2">
-				<input class="btn btn-success inline-block" value="Sort By">
+                <div class="btn-group" style="width: 100%;">
+                    <button id="btn-sort" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
+                        <span class="btn-option">Sort By</span> <span class="caret"></span>
+                    </button>
+                    <ul class="drop-menu hidden">
+                        <li class="dropdown-top" style="padding: 14px 14px;"><span>Sort By</span></li>
+                        <li style="padding: 14px 14px;"><span>Automated</span></li>
+                        <li style="padding: 14px 14px;"><span>Manual</span></li>
+                        <li style="padding: 14px 14px;"><span>Unit</span></li>
+                        <li class="dropdown-bott" style="padding: 14px 14px;"><span>All</span></li>
+                    </ul>
+                </div>
 			</div>
 			<div class="col-lg-2">
-				<input class="btn btn-success inline-block" value="Category">
+                <div class="btn-group" style="width: 100%;">
+                    <button id="btn-cat" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
+                        <span class="btn-option">Category</span> <span class="caret"></span>
+                    </button>
+                    <ul class="drop-menu hidden" >
+                        <li class="dropdown-top" style="padding: 14px 14px;"><span>Category</span></li>
+                        <li style="padding: 14px 14px;"><span>Automated</span></li>
+                        <li style="padding: 14px 14px;"><span>Manual</span></li>
+                        <li style="padding: 14px 14px;"><span>Unit</span></li>
+                        <li class="dropdown-bott" style="padding: 14px 14px;"><span>All</span></li>
+                    </ul>
+                </div>
 			</div>
 			<div class="col-lg-2">
 				<input class="btn btn-primary inline-block" type="submit" value="Search">
@@ -89,85 +133,8 @@
 			<div class="col-lg-1"></div>
 		</div>
 		<!-- DO ROW LOOP HERE -->
-		{% if query %}
-            {% for result in page.object_list %}
-                <div class="row main-row-container">
-					<div class="col-lg-1"></div>
-					<div class="col-lg-2">
-						<!-- CHANGE IMAGES HERE -->
-			        	<img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-			       	 	<img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-			        	<img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-					</div>
-					<div class="col-lg-6">
-				        <div class="main-row">
-				        	<div class="main-row-subject">{{ result.object.subject }} (More)</div>
-				        	<div class="main-row-content">
-					        	<div class="bar"></div>
-					        	<div class="main-row-body"><img class="main-row-smallarrow" src="{{ STATIC_URL }}images/arrow-small.png"/> {{ result.object.body }}</div>
-					        </div>
-				        </div>
-					</div>
-					<div class="col-lg-2 main-row-date">
-				        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
-				        {{ result.object.created.month }}/{{ result.object.created.day }}/{{ result.object.created.year}} {{ result.object.created.time }}
-				    </div>
-					<div class="col-lg-1"></div>
-				</div>
-            {% empty %}
-            	<div class="row main-row-container">
-            		<div class="col-lg-1"></div>
-            		<div class="col-lg-2"></div>
-					<div class="col-lg-6">
-						<div class="main-row">
-							<p>No results found.</p>
-						</div>
-					</div>
-            	</div>
-                
-            {% endfor %}
-
-            {% if page.has_previous or page.has_next %}
-                <div>
-                    {% if page.has_previous %}
-                    	<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">
-                    {% endif %}
-                    &laquo; Previous
-                    {% if page.has_previous %}</a>{% endif %}
-                    |
-                    {% if page.has_next %}
-                    	<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">
-                    {% endif %}Next &raquo;
-                    {% if page.has_next %}</a>{% endif %}
-                </div>
-            {% endif %}
-        {% else %}
-	    {% for kudos in kudos_set %}
-		<div class="row main-row-container">
-			<div class="col-lg-1"></div>
-			<div class="col-lg-2">
-				<!-- CHANGE IMAGES HERE -->
-	        	<img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-	       	 	<img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-	        	<img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-			</div>
-			<div class="col-lg-6">
-		        <div class="main-row">
-		        	<div class="main-row-subject">{{ kudos.subject }} (More)</div>
-		        	<div class="main-row-content">
-			        	<div class="bar"></div>
-			        	<div class="main-row-body"><img class="main-row-smallarrow" src="{{ STATIC_URL }}images/arrow-small.png"/> {{ kudos.body }}</div>
-			        </div>
-		        </div>
-			</div>
-			<div class="col-lg-2 main-row-date">
-		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
-		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
-		    </div>
-			<div class="col-lg-1"></div>
-		</div>
-	    {% endfor %}
-	    {% endif %}
+		<div class="search-results-container"></div>
+		
 		<div class="divider-60"></div>
 	</div>
 	<!-- START FOOTER -->
@@ -183,7 +150,6 @@
 	<!-- END FOOTER -->
 	<div class="divider-60"></div>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/home.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript">
 		$('#main-search').val("{{ query }}");
 	</script>
