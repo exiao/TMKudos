@@ -40,7 +40,11 @@ class Employee(models.Model):
             response = conn.getresponse()
             conn.close()
             return response.status == 200
-        return exists('http://localhost', '/static/images/profiles/'+self.get_image_file)
+        return exists('http://1', '/static/images/profiles/'+self.get_image_file)
+
+    def hashcode(self):
+        import md5
+        return md5.new(self.get_full_name())
 
     def get_full_name(self):
         return self.first_name + ' ' + self.last_name
