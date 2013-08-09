@@ -23,28 +23,11 @@ body text
 )engine=innodb default charset=utf8;"""
 
 class Employee(models.Model):
-    EXEC = 'Executive'
-    HR = 'Human Resources'
-    APPENG = 'Application Engineering'
-    OPS = 'Operations'
-    UI = 'User Interface'
-    RTB = 'RTB'
-    ADOPS = 'Ad Operations'
-    DEPT_CHOICES = (
-        (EXEC ,'Executive'),
-        (HR ,'Human Resources'),
-        (APPENG ,'Application Engineering'),
-        (OPS ,'Operations'),
-        (UI ,'User Interface'),
-        (RTB ,'RTB'),
-        (ADOPS ,'Ad Operations'),
-    )
-
-    dept = models.CharField(choices=DEPT_CHOICES,
-                              default=EXEC, max_length=25)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    dept = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     email = models.EmailField()
+    location = models.CharField(max_length=100)
 
 
 class Kudos(models.Model):

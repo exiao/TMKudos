@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'kudosapp',
     'django_evolution',
+    'social_auth',
 )
 
 # A sample logging configuration. The only tangible logging
