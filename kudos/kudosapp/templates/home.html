@@ -89,85 +89,8 @@
 			<div class="col-lg-1"></div>
 		</div>
 		<!-- DO ROW LOOP HERE -->
-		{% if query %}
-            {% for result in page.object_list %}
-                <div class="row main-row-container">
-					<div class="col-lg-1"></div>
-					<div class="col-lg-2">
-						<!-- CHANGE IMAGES HERE -->
-			        	<img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-			       	 	<img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-			        	<img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-					</div>
-					<div class="col-lg-6">
-				        <div class="main-row">
-				        	<div class="main-row-subject">{{ result.object.subject }} (More)</div>
-				        	<div class="main-row-content">
-					        	<div class="bar"></div>
-					        	<div class="main-row-body"><img class="main-row-smallarrow" src="{{ STATIC_URL }}images/arrow-small.png"/> {{ result.object.body }}</div>
-					        </div>
-				        </div>
-					</div>
-					<div class="col-lg-2 main-row-date">
-				        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
-				        {{ result.object.created.month }}/{{ result.object.created.day }}/{{ result.object.created.year}} {{ result.object.created.time }}
-				    </div>
-					<div class="col-lg-1"></div>
-				</div>
-            {% empty %}
-            	<div class="row main-row-container">
-            		<div class="col-lg-1"></div>
-            		<div class="col-lg-2"></div>
-					<div class="col-lg-6">
-						<div class="main-row">
-							<p>No results found.</p>
-						</div>
-					</div>
-            	</div>
-                
-            {% endfor %}
-
-            {% if page.has_previous or page.has_next %}
-                <div>
-                    {% if page.has_previous %}
-                    	<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">
-                    {% endif %}
-                    &laquo; Previous
-                    {% if page.has_previous %}</a>{% endif %}
-                    |
-                    {% if page.has_next %}
-                    	<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">
-                    {% endif %}Next &raquo;
-                    {% if page.has_next %}</a>{% endif %}
-                </div>
-            {% endif %}
-        {% else %}
-	    {% for kudos in kudos_set %}
-		<div class="row main-row-container">
-			<div class="col-lg-1"></div>
-			<div class="col-lg-2">
-				<!-- CHANGE IMAGES HERE -->
-	        	<img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-	       	 	<img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-	        	<img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-			</div>
-			<div class="col-lg-6">
-		        <div class="main-row">
-		        	<div class="main-row-subject">{{ kudos.subject }} (More)</div>
-		        	<div class="main-row-content">
-			        	<div class="bar"></div>
-			        	<div class="main-row-body"><img class="main-row-smallarrow" src="{{ STATIC_URL }}images/arrow-small.png"/> {{ kudos.body }}</div>
-			        </div>
-		        </div>
-			</div>
-			<div class="col-lg-2 main-row-date">
-		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
-		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
-		    </div>
-			<div class="col-lg-1"></div>
-		</div>
-	    {% endfor %}
-	    {% endif %}
+		<div class="search-results-container"></div>
+		
 		<div class="divider-60"></div>
 	</div>
 	<!-- START FOOTER -->

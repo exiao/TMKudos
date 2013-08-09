@@ -1,10 +1,11 @@
 
 
 $.ajax({
-  url: "/",
+  url: "/search/",
   type: "GET",
   cache: false,
-  success: function(html){
+  dataType: "html"
+  success: function(json){
     $("#results").append(html);
   }
 });
