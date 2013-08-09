@@ -29,6 +29,8 @@ class Employee(models.Model):
     email = models.EmailField()
     location = models.CharField(max_length=100, null=True)
 
+    def get_image_file(self):
+        return self.first_name + '_' + self.last_name + '.jpg'
 
 class Kudos(models.Model):
     from_employee = models.ForeignKey('employee', related_name='sent_kudos')
