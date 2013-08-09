@@ -27,7 +27,7 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
-    location = models.CharField(max_length=100)
+    location = models.CharField(max_length=100, null=True)
 
 
 class Kudos(models.Model):
