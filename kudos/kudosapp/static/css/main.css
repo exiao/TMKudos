@@ -5,6 +5,7 @@
 .divider-60{ margin-top: 60px; }
 .divider-30{ margin-top: 30px; }
 .divider-15{ margin-top: 15px; }
+.inline-block{ display: inline-block; width: 100%;}
 
 /* ===============================================
 					MAIN CSS
@@ -49,6 +50,11 @@ body{ background-color: #f5f5f5; }
 /* ===============================================
 					CONTAINER CSS
 ================================================== */
+#main-search{ margin: 0 0 25px 0;}
+.main-row-container{ 
+	display: block;
+	margin-top: 15px;
+}
 .main-container{ 
 	background-color: #fff;
 	-moz-border-radius: 5px;
@@ -65,16 +71,18 @@ body{ background-color: #f5f5f5; }
 	margin: 10px auto 20px auto;
 }
 .main-row{
-	-moz-border-radius: 2px;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
-	background-color: #f4f4f4;
-	border: 1px solid #aaa;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #f8f8f8;
+	border: 1px solid #bbb;
 	color: #333;
 	display: inline-block;
-	margin: 15px 0 0 10px;
 	padding: 9px 20px;
-	width: 82%;
+	width: 100%;
+}
+.main-row-arrow{
+	margin: 0 2px 0 12px;
 }
 .main-row-from, 
 .main-row-to{
@@ -89,6 +97,7 @@ body{ background-color: #f5f5f5; }
 	height: 40px;
 }
 #logo-center{
+	cursor: pointer;
 	display: block;
 	margin: 50px auto;
 	width: 100%;

@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="{{ STATIC_URL }}js/bootstrap.js" />
 </head>
 <body>
+	<!-- START TOOLBAR -->
 	<div id="toolbar">
 		<div class="container">
 			<div class="row">
@@ -25,6 +26,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- END TOOLBAR -->
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3"></div>
@@ -41,31 +43,112 @@
 			<div class="col-lg-10">
 				<div class="main-header">
 					Kudos Report
+					<hr />
 				</div>
-			</div>
-			<div class="main-row-container">
-				Test
 			</div>
 			<div class="col-lg-1"></div>
 		</div>
 		<div class="row">
 			<div class="col-lg-1"></div>
 			<div class="col-lg-10">
-				<div class="main-header">
-					Latest Kudos
-				</div>
-				    {% for kudos in kudos_set %}
-						<div class="main-row-container">
-					        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-					        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-					        <div class="main-row">{{ kudos.subject }}</div>
-						</div>
-				    {% endfor %}
+				<input id="main-search" type="text" class="form-control" placeholder="E.g. Brett Wilson, CTO" >
 			</div>
 			<div class="col-lg-1"></div>
 		</div>
-		<div class="divider-30"></div>
+		<div class="row">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-2">
+				<input class="btn btn-success inline-block" value="Department">
+			</div>
+			<div class="col-lg-2">
+				<input class="btn btn-success inline-block" value="Sender Type">
+			</div>
+			<div class="col-lg-2">
+				<input class="btn btn-success inline-block" value="Sort By">
+			</div>
+			<div class="col-lg-4">
+				<input class="btn btn-primary inline-block" value="Search">
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<div class="divider-60"></div>
+		<div class="row">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-10">
+				<div id="main-results" class="main-header">
+					Latest Kudos
+					<hr />
+				</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<!-- DO ROW LOOP HERE -->
+	    {% for kudos in kudos_set %}
+		<div class="row main-row-container">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-2">
+				<!-- CHANGE IMAGES HERE -->
+		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
+		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+			</div>
+			<div class="col-lg-8">
+		        <div class="main-row">{{ kudos.subject }}</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<div class="row main-row-container">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-2">
+		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
+		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+			</div>
+			<div class="col-lg-8">
+		        <div class="main-row">{{ kudos.subject }}</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<div class="row main-row-container">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-2">
+		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
+		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+			</div>
+			<div class="col-lg-8">
+		        <div class="main-row">{{ kudos.subject }}</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<div class="row main-row-container">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-2">
+		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
+		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+			</div>
+			<div class="col-lg-8">
+		        <div class="main-row">{{ kudos.subject }}</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<div class="row main-row-container">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-2">
+		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
+		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+			</div>
+			<div class="col-lg-8">
+		        <div class="main-row">{{ kudos.subject }}</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+	    {% endfor %}
+		<div class="divider-60"></div>
 	</div>
+	<!-- START FOOTER -->
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 footer-text">
@@ -75,5 +158,7 @@
 			<div class="col-lg-4"></div>
 		</div>
 	</div>
+	<!-- END FOOTER -->
+	<div class="divider-60"></div>
 </body>
 </html>
