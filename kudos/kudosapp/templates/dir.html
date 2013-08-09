@@ -48,7 +48,20 @@
 				</div>
 				{% for employee in employee_set %}
 				<div class="employee-row">
-					
+					{{ employee.get_full_name }}<br>
+					Sent: 
+					{% if emplyee.sent_kudos %}
+						{{ employee.sent_kudos|length }}
+					{% else %}
+						0
+					{% endif %}
+					<br>
+					Received:
+					{% if emplyee.received_kudos %}
+						{{ employee.received_kudos|length }}
+					{% else %}
+						0
+					{% endif %}
 				</div>
 				{% endfor %}
 			</div>
