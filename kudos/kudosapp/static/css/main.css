@@ -204,6 +204,44 @@ body{ background-color: #f5f5f5; }
 	width: 100%;
 }
 
+/* ===============================================
+					EMPLOYEE CSS
+================================================== */
+.employee-row{
+	background-color: #fff;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #b9b9b9;
+	box-shadow: 0 1px 5px #d1d1d1;
+	cursor: pointer;
+	display: inline-block;
+	height: 215px;
+	margin: 0 8px 20px 0;
+	padding: 10px 10px;
+	-webkit-transition: 0.25s;
+	-moz-transition: 0.25s;
+	-o-transition: 0.25s;
+	transition: 0.25s;
+	width: 15%;
+}
+.employee-row:hover{
+	background-color: #eee;
+}
+.employee-text{
+	color: #555;
+	display: block;
+	font-size: 13px;
+	margin: 4px 0;
+}
+.employee-pic{
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	display: block;
+	margin-bottom: 10px;
+	width: 100%;
+}
 
 /* ===============================================
 					FOOTER CSS

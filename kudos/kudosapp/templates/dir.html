@@ -14,14 +14,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
-					<img id="toolbar-logo" src="{{ STATIC_URL }}images/tubemogul.png" />
+					<a href="/"><img id="toolbar-logo" src="{{ STATIC_URL }}images/tubemogul.png" /></a>
 				</div>
 				<div class="col-lg-3"></div>
 				<div class="col-lg-3 "></div>
 				<div class="col-lg-1 toolbar-style-right"></div>
-				<div class="col-lg-1 toolbar-button">
+				<a href="/"><div class="col-lg-1 toolbar-button">
 					Home
-				</div>
+				</div></a>
 				<div class="col-lg-1 toolbar-style-left">
 				</div>
 			</div>
@@ -43,41 +43,48 @@
 			<div class="col-lg-1"></div>
 			<div class="col-lg-10">
 				<div class="main-header">
-					Kudos Report
+					Employee Directory
 					<hr />
 				</div>
-				{% for employee in employee_set %}
-				<div class="employee-row">
-					{{ employee.get_full_name }}<br>
-					Sent: 
-					{% if emplyee.sent_kudos %}
-						{{ employee.sent_kudos|length }}
-					{% else %}
-						0
-					{% endif %}
-					<br>
-					Received:
-					{% if emplyee.received_kudos %}
-						{{ employee.received_kudos|length }}
-					{% else %}
-						0
-					{% endif %}
-				</div>
-				{% endfor %}
 			</div>
 			<div class="col-lg-1"></div>
 		</div>
-		<div class="divider-60"></div>
 		<div class="row">
 			<div class="col-lg-1"></div>
 			<div class="col-lg-10">
-				<div id="main-results" class="main-header">
-					Directory
-					<hr />
+				<div id="main-results">
+				{% for employee in employee_set %}
+				<div class="employee-row">
+					<img class="employee-pic" src="{{ STATIC_URL }}images/user-eric.png" />
+					<span class="employee-text">{{ employee.get_full_name }}</span>
+					<span class="employee-text">
+						Sent: 
+						{% if emplyee.sent_kudos %}
+							<span class="pull-right">{{ employee.sent_kudos|length }}</span>
+						{% else %}
+							<span class="pull-right">0</span>
+						{% endif %}
+					</span>
+					<span class="employee-text">
+						Received:
+						{% if emplyee.received_kudos %}
+							<span class="pull-right">{{ employee.received_kudos|length }}</span>
+						{% else %}
+							<span class="pull-right">0</span>
+						{% endif %}
+					</span>
+				</div>
+				{% endfor %}
+				<div class="employee-row">
+					<img class="employee-pic" src="{{ STATIC_URL }}images/user-jeff.png" />
+					<span class="employee-text">Jeff</span>
+					<span class="employee-text">Sent: <span class="pull-right">1</span></span>
+					<span class="employee-text">Received: <span class="pull-right">5</span></span>
 				</div>
 			</div>
 			<div class="col-lg-1"></div>
 		</div>
+	</div>
 		<!-- DO ROW LOOP HERE -->
 		<div class="divider-60"></div>
 	</div>
