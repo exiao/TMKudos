@@ -17,14 +17,14 @@
                 <!-- CHANGE IMAGES HERE -->
                 <div class="float-left">
                     <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" /><br />
-                    <div class="sender-text">{{ result.from_employee.first_name }}</div>
+                    <div class="sender-text">{{ result.object.from_employee.first_name }}</div>
                 </div>
                 <div class="float-left">
                     <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
                 </div>
                 <div class="float-left">
                     <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" /><br />
-                    <div class="sender-text">{{ result.to_employee.first_name }}</div>
+                    <div class="sender-text">{{ result.object.to_employee.first_name }}</div>
                 </div>
             </div>
             <div class="col-lg-6">
