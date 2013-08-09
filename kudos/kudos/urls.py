@@ -4,7 +4,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-from haystack.views import SearchView
+#from haystack.views import SearchView
 
 urlpatterns = patterns('',
     # Examples:
