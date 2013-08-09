@@ -95,21 +95,22 @@
 					<div class="col-lg-1"></div>
 					<div class="col-lg-2">
 						<!-- CHANGE IMAGES HERE -->
-				        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-				        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-				        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+			        	<img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+			       	 	<img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
+			        	<img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 					</div>
 					<div class="col-lg-6">
-				        <div class="main-row">{{ result.object.subject }}, 
-				        	{% for tag in result.object.get_delimited_tags %}
-				        		{% if tag %}
-				        			#{{ tag }}
-				        		{% endif %}
-				        	{% endfor %}
+				        <div class="main-row">
+				        	<div class="main-row-subject">{{ result.object.subject }} (More)</div>
+				        	<div class="main-row-content">
+					        	<div class="bar"></div>
+					        	<div class="main-row-body"><img class="main-row-smallarrow" src="{{ STATIC_URL }}images/arrow-small.png"/> {{ result.object.body }}</div>
+					        </div>
 				        </div>
 					</div>
-					<div class="col-lg-2">
-				        {{ result.object.created.date }} {{ result.object.created.time }}
+					<div class="col-lg-2 main-row-date">
+				        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
+				        {{ result.object.created.month }}/{{ result.object.created.day }}/{{ result.object.created.year}} {{ result.object.created.time }}
 				    </div>
 					<div class="col-lg-1"></div>
 				</div>
@@ -151,7 +152,6 @@
 	        	<img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
-<<<<<<< HEAD
 		        <div class="main-row">
 		        	<div class="main-row-subject">{{ kudos.subject }} (More)</div>
 		        	<div class="main-row-content">
@@ -159,79 +159,6 @@
 			        	<div class="main-row-body"><img class="main-row-smallarrow" src="{{ STATIC_URL }}images/arrow-small.png"/> {{ kudos.body }}</div>
 			        </div>
 		        </div>
-			</div>
-			<div class="col-lg-2 main-row-date">
-		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
-		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
-		    </div>
-			<div class="col-lg-1"></div>
-		</div>
-		<div class="row main-row-container">
-			<div class="col-lg-1"></div>
-			<div class="col-lg-2">
-		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-			</div>
-			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }} (More)</div>
-			</div>
-			<div class="col-lg-2 main-row-date">
-		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
-		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
-		    </div>
-			<div class="col-lg-1"></div>
-		</div>
-		<div class="row main-row-container">
-			<div class="col-lg-1"></div>
-			<div class="col-lg-2">
-		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-			</div>
-			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }} (More)</div>
-			</div>
-			<div class="col-lg-2 main-row-date">
-		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
-		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
-		    </div>
-			<div class="col-lg-1"></div>
-		</div>
-		<div class="row main-row-container">
-			<div class="col-lg-1"></div>
-			<div class="col-lg-2">
-		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-			</div>
-			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }} (More)</div>
-			</div>
-			<div class="col-lg-2 main-row-date">
-		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
-		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
-		    </div>
-			<div class="col-lg-1"></div>
-		</div>
-		<div class="row main-row-container">
-			<div class="col-lg-1"></div>
-			<div class="col-lg-2">
-		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
-			</div>
-			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }} (More)</div>
-=======
-		        <div class="main-row">{{ kudos.subject }}, 
-		        	{% for tag in kudos.get_delimited_tags %}
-		        		{% if tag %}
-		        			#{{ tag }}
-		        		{% endif %}
-		        	{% endfor %}
-		        </div>
->>>>>>> a271ca32cf5600e038f17bc60b7a33aa713bab16
 			</div>
 			<div class="col-lg-2 main-row-date">
 		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
