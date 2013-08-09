@@ -57,6 +57,7 @@ def basic_search(request, template='search.html', load_all=True, form_class=Mode
     dept = request.GET.get('dept')
     sort_type = request.GET.get('type')
     category = request.GET.get('category')
+    print(category)
 
     results = SearchQuerySet()
     results.filter(content=category)
@@ -65,7 +66,7 @@ def basic_search(request, template='search.html', load_all=True, form_class=Mode
         form = form_class(request.GET, searchqueryset=searchqueryset, load_all=load_all)
         if form.is_valid():
             query = form.cleaned_data['q']
-            results = form.search()
+            results = form.search().order_by('created')
     else:
         form = form_class(searchqueryset=searchqueryset, load_all=load_all)
 
