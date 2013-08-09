@@ -43,3 +43,4 @@ class Kudos(models.Model):
     body = models.TextField()
     flagged = models.BooleanField(default=False)
     tags = models.CharField(max_length=50, null=True, blank=True)
+    message_id = models.CharField(max_length=255, null=True, blank=True)
