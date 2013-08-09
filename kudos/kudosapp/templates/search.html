@@ -16,14 +16,23 @@
             <div class="col-lg-2">
                 <!-- CHANGE IMAGES HERE -->
                 <div class="float-left">
-                    <img class="main-row-from" src="{{ STATIC_URL }}images/profiles/{{ result.object.from_employee.get_image_file }}" /><br />
+                    {% if result.object.from_employee.image_exists %}
+                        <img class="main-row-from" src="{{ STATIC_URL }}images/profiles/{{ result.object.from_employee.get_image_file }}" />
+                    {% else %}
+                        <img class="main-row-from" src="http://gravatar.com/avatar/{{ result.object.from_employee.hashcode }}?d=wavatar" />
+                    {% endif %}
                     <div class="sender-text">{{ result.object.from_employee.first_name }}</div>
                 </div>
                 <div class="float-left">
                     <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
                 </div>
                 <div class="float-left">
-                    <img class="main-row-to" src="{{ STATIC_URL }}images/profiles/{{ result.object.to_employee.get_image_file }}" /><br />
+                    {% if result.object.to_employee.image_exists %}
+                        <img class="main-row-to" src="{{ STATIC_URL }}images/profiles/{{ result.object.to_employee.get_image_file }}" />
+                    {% else %}
+                        <img class="main-row-to" src="http://gravatar.com/avatar/{{ result.object.to_employee.hashcode }}?d=wavatar" />
+                    {% endif %}
+                    <br />
                     <div class="sender-text">{{ result.object.to_employee.first_name }}</div>
                 </div>
             </div>
@@ -80,14 +89,24 @@
 
         -->
         <div class="float-left">
-            <img class="main-row-from" src="{{ STATIC_URL }}images/profiles/{{ kudos.from_employee.get_image_file }}" /><br />
+            {% if kudos.from_employee.image_exists %}
+                <img class="main-row-from" src="{{ STATIC_URL }}images/profiles/{{ kudos.from_employee.get_image_file }}" />
+            {% else %}
+                <img class="main-row-from" src="http://gravatar.com/avatar/{{ kudos.from_employee.hashcode }}?d=wavatar" />
+            {% endif %}
+            <br />
             <div class="sender-text">{{ kudos.from_employee.first_name }}</div>
         </div>
         <div class="float-left">
             <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
         </div>
         <div class="float-left">
-            <img class="main-row-to" src="{{ STATIC_URL }}images/profiles/{{ kudos.to_employee.get_image_file }}" /><br />
+            {% if kudos.to_employee.image_exists %}
+                <img class="main-row-from" src="{{ STATIC_URL }}images/profiles/{{ kudos.to_employee.get_image_file }}" />
+            {% else %}
+                <img class="main-row-from" src="http://gravatar.com/avatar/{{ kudos.to_employee.hashcode }}?d=wavatar" />
+            {% endif %}
+            <br />
             <div class="sender-text">{{ kudos.to_employee.first_name }}</div>
         </div>
     </div>
