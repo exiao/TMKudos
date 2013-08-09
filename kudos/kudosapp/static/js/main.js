@@ -1,13 +1,4 @@
 $(document).ready(function(){
-	$('.main-row').on('click', function(){
-		$content = $(this).find('.main-row-content');
-		if(!$content.hasClass('display-content')){
-			$content.slideDown(500, 'easeOutBack').addClass('display-content');
-		}else{
-			$content.slideUp(500, 'easeOutBack').removeClass('display-content');
-		}
-	});
-
 	/* ===========================================================================
                             .:: SEARCH ::. 
     =========================================================================== */
@@ -64,7 +55,7 @@ $(document).ready(function(){
     	$btn_group = $(this).parent().parent();
     	$btn_group.find('.btn-option').text(option);
     	$btn_group.find('.dropdown-toggle').click();
-    	var default_text = ['All Departments', 'All Sender Types', 'Latest Kudos', 'All Categories'];
+    	var default_text = ['All Departments', 'Latest Kudos', 'All Categories'];
     	if($.inArray(option, default_text) > -1){
     		$btn_group.find('.btn').removeClass('btn-dark').addClass('btn-primary');
     	}else{
