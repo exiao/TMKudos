@@ -18,7 +18,7 @@
 				</div>
 				<div class="col-lg-3"></div>
 				<div class="col-lg-3 "></div>
-				<div class="col-lg-1"></div>
+				<div class="col-lg-1 toolbar-style-right"></div>
 				<div class="col-lg-1 toolbar-button">
 					Directory
 				</div>
@@ -62,27 +62,29 @@
 			<div class="col-lg-2">
                 <div class="btn-group" style="width: 100%;">
                     <button id="btn-dept" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
-                        <span class="btn-option">Department</span> <span class="caret"></span>
+                        <span class="btn-option">All Departments</span> <span class="caret"></span>
                     </button>
                     <ul class="drop-menu hidden">
                         <li class="dropdown-top" style="padding: 14px 14px;"><span>Department</span></li>
-                        <li style="padding: 14px 14px;"><span>Automated</span></li>
-                        <li style="padding: 14px 14px;"><span>Manual</span></li>
-                        <li style="padding: 14px 14px;"><span>Unit</span></li>
-                        <li class="dropdown-bott" style="padding: 14px 14px;"><span>All</span></li>
+                        <li style="padding: 14px 14px;"><span>AdOps</span></li>
+                        <li style="padding: 14px 14px;"><span>Accounting</span></li>
+                        <li style="padding: 14px 14px;"><span>Engineering</span></li>
+                        <li style="padding: 14px 14px;"><span>HR/Recruiting</span></li>
+                        <li style="padding: 14px 14px;"><span>Marketing</span></li>
+                        <li style="padding: 14px 14px;"><span>Sales</span></li>
+                        <li class="dropdown-bott" style="padding: 14px 14px;"><span>SysOps</span></li>
                     </ul>
                 </div>
 			</div>
 			<div class="col-lg-2">
                 <div class="btn-group" style="width: 100%;">
                     <button id="btn-type" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
-                        <span class="btn-option">Sender Type</span> <span class="caret"></span>
+                        <span class="btn-option">All Sender Types</span> <span class="caret"></span>
                     </button>
                     <ul class="drop-menu hidden">
-                        <li class="dropdown-top" style="padding: 14px 14px;"><span>Search Type</span></li>
-                        <li style="padding: 14px 14px;"><span>Automated</span></li>
-                        <li style="padding: 14px 14px;"><span>Manual</span></li>
-                        <li style="padding: 14px 14px;"><span>Unit</span></li>
+                        <li class="dropdown-top" style="padding: 14px 14px;"><span>All Sender Types</span></li>
+                        <li style="padding: 14px 14px;"><span>Top Receivers</span></li>
+                        <li style="padding: 14px 14px;"><span>Top Senders</span></li>
                         <li class="dropdown-bott" style="padding: 14px 14px;"><span>All</span></li>
                     </ul>
                 </div>
@@ -90,10 +92,10 @@
 			<div class="col-lg-2">
                 <div class="btn-group" style="width: 100%;">
                     <button id="btn-sort" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
-                        <span class="btn-option">Sort By</span> <span class="caret"></span>
+                        <span class="btn-option">Latest Kudos</span> <span class="caret"></span>
                     </button>
                     <ul class="drop-menu hidden">
-                        <li class="dropdown-top" style="padding: 14px 14px;"><span>Sort By</span></li>
+                        <li class="dropdown-top" style="padding: 14px 14px;"><span>Latest Kudos</span></li>
                         <li style="padding: 14px 14px;"><span>Automated</span></li>
                         <li style="padding: 14px 14px;"><span>Manual</span></li>
                         <li style="padding: 14px 14px;"><span>Unit</span></li>
@@ -104,10 +106,10 @@
 			<div class="col-lg-2">
                 <div class="btn-group" style="width: 100%;">
                     <button id="btn-cat" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
-                        <span class="btn-option">Category</span> <span class="caret"></span>
+                        <span class="btn-option">All Categories</span> <span class="caret"></span>
                     </button>
                     <ul class="drop-menu hidden" >
-                        <li class="dropdown-top" style="padding: 14px 14px;"><span>Category</span></li>
+                        <li class="dropdown-top" style="padding: 14px 14px;"><span>All Categories</span></li>
                         <li style="padding: 14px 14px;"><span>Automated</span></li>
                         <li style="padding: 14px 14px;"><span>Manual</span></li>
                         <li style="padding: 14px 14px;"><span>Unit</span></li>
@@ -134,7 +136,6 @@
 		</div>
 		<!-- DO ROW LOOP HERE -->
 		<div class="search-results-container"></div>
-		
 		<div class="divider-60"></div>
 	</div>
 	<!-- START FOOTER -->
@@ -150,8 +151,6 @@
 	<!-- END FOOTER -->
 	<div class="divider-60"></div>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/home.js"></script>
-	<script type="text/javascript">
-		$('#main-search').val("{{ query }}");
-	</script>
+	<script type="text/javascript"></script>
 </body>
 </html>

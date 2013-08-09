@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	$('.main-row').on('click', function(){
 		$content = $(this).find('.main-row-content');
 		if(!$content.hasClass('display-content')){
@@ -9,11 +10,21 @@ $(document).ready(function(){
 	});
 
 	/* ===========================================================================
-                            .:: TYPE DROPDOWN ::. (ci2a)
+                            .:: SEARCH ::. 
+    =========================================================================== */
+	$('#main-search').val("{{ query }}");
+
+    $('#portal-searchbox').live('keypress', function(event){
+        if(event.keyCode == 13){
+            $('#portal-searchbox-button').click();
+        }
+    });
+	/* ===========================================================================
+                            .:: TYPE DROPDOWN ::. 
     =========================================================================== */
     var $currToggle = '';
 	$('.dropdown-toggle').toggle(function(){
-		if($currToggle !== ''){
+		if($currToggle !== '' && $currToggle.attr('id') !== $(this).attr('id')){
 			$currToggle.click();
 		}
 		$this = $(this);
@@ -23,6 +34,7 @@ $(document).ready(function(){
     	$dropmenu.removeClass('hidden');
     	$dropmenu.animate({ 'opacity' : '1', 'margin' : '50px auto'}, 300);
     }, function(){
+    	$currToggle = '';
     	$dropmenu = $(this).parent().find('.drop-menu');
     	$dropmenu.stop().animate({ 'opacity' : '0', 'margin' : '35px auto'}, 150, function(){
     		$(this).addClass('hidden');
@@ -33,7 +45,7 @@ $(document).ready(function(){
     	$btn_group = $(this).parent().parent();
     	$btn_group.find('.btn-option').text(option);
     	$btn_group.find('.dropdown-toggle').click();
-    	var default_text = ['Department', 'Search Type', 'Sort By', 'Category'];
+    	var default_text = ['All Departments', 'All Sender Types', 'Latest Kudos', 'All Categories'];
     	if($.inArray(option, default_text) > -1){
     		$btn_group.find('.btn').removeClass('btn-dark').addClass('btn-primary');
     	}else{
