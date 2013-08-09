@@ -44,3 +44,7 @@ class Kudos(models.Model):
     flagged = models.BooleanField(default=False)
     tags = models.CharField(max_length=50, null=True, blank=True)
     message_id = models.CharField(max_length=255, null=True, blank=True)
+
+    def get_delimited_tags(self):
+        tags = split(self.tags,',')
+        return tags

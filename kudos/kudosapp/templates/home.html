@@ -96,7 +96,10 @@
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }}, {{ kudos.tags }}</div>
+		        <div class="main-row">{{ kudos.subject }}, {% for tag in kudos.tags %}
+		        	#{{ tag }}
+		        	{% endfor %}
+		        </div>
 			</div>
 			<div class="col-lg-2">
 		        {{ kudos.created.date }} {{ kudos.created.time }}
