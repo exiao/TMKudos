@@ -98,7 +98,9 @@
 			<div class="col-lg-6">
 		        <div class="main-row">{{ kudos.subject }}, 
 		        	{% for tag in kudos.get_delimited_tags %}
-		        		#{{ tag }}
+		        		{% if tag %}
+		        			#{{ tag }}
+		        		{% endif %}
 		        	{% endfor %}
 		        </div>
 			</div>
