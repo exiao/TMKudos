@@ -45,7 +45,7 @@ class Employee(models.Model):
         return self.first_name + ' ' + self.last_name
 
     def __unicode__(self):
-        return self.get_full_name
+        return self.get_full_name()
 
 class Kudos(models.Model):
     from_employee = models.ForeignKey('employee', related_name='sent_kudos')
