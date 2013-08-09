@@ -10,7 +10,7 @@ from django.http import Http404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from haystack.forms import ModelSearchForm, FacetedSearchForm
-from haystack.query import EmptySearchQuerySet
+from haystack.query import EmptySearchQuerySet, SearchQuerySet
 
 RESULTS_PER_PAGE = getattr(settings, 'HAYSTACK_SEARCH_RESULTS_PER_PAGE', 20)
 
@@ -51,19 +51,21 @@ def basic_search(request, template='search.html', load_all=True, form_class=Mode
           The query received by the form.
     """
     query = ''
-    results = EmptySearchQuerySet()
+    #results = EmptySearchQuerySet()
+
 
     dept = request.GET.get('dept')
     sort_type = request.GET.get('type')
     category = request.GET.get('category')
 
+    results = SearchQuerySet()
+    results.filter(content=category)
+
     if request.GET.get('q'):
         form = form_class(request.GET, searchqueryset=searchqueryset, load_all=load_all)
-
         if form.is_valid():
             query = form.cleaned_data['q']
             results = form.search()
-            #results = results.order_by('get_from_employee_sent_kudos_count')
     else:
         form = form_class(searchqueryset=searchqueryset, load_all=load_all)
 
