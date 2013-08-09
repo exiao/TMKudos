@@ -39,4 +39,4 @@ class Kudos(models.Model):
     subject = models.CharField(max_length=511)
     body = models.TextField()
     flagged = models.BooleanField(default=False)
-    tags = models.CharField(max_length=50, null=True)
+    tags = models.CharField(max_length=50, null=True, blank=True)
