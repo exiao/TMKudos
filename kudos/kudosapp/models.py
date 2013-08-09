@@ -30,7 +30,7 @@ class Employee(models.Model):
     location = models.CharField(max_length=100, null=True)
 
     def get_image_file(self):
-        return self.first_name + '_' + self.last_name + '.jpg'
+        return self.first_name.lower() + '_' + self.last_name.lower() + '.jpg'
 
     def get_full_name(self):
         return self.first_name + ' ' + self.last_name
