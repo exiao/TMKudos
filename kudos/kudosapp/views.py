@@ -16,7 +16,7 @@ RESULTS_PER_PAGE = getattr(settings, 'HAYSTACK_SEARCH_RESULTS_PER_PAGE', 20)
 
 
 def home(request):
-    kudos_set = Kudos.objects.order_by("created")
+    kudos_set = Kudos.objects.order_by("created")[:10]
     data = {}
     data['kudos_set'] = kudos_set
     return render_to_response('home.html', data, context_instance=RequestContext(request))
