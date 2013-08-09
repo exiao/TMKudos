@@ -8,8 +8,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    #url(r'^$', 'kudosapp.views.home', name='home'),
-    url(r'^$', 'kudosapp.views.basic_search', name='search'),
+    url(r'^$', 'kudosapp.views.home', name='home'),
+    #url(r'^$', 'kudosapp.views.basic_search', name='search'),
+    url(r'^search/$', 'kudosapp.views.basic_search', name='search'),
     # url(r'^$', SearchView(), name='haystack_search'),
     # url(r'^kudos/', include('kudos.foo.urls')),
 
