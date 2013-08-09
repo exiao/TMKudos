@@ -49,6 +49,7 @@ sub is_kudo_unique ($$$){
  
 $imap->login($user => $pass) || die "Unable to login $user/$pass\n";
   
+  
     my $nm = $imap->select('INBOX');
 
     for(my $i = 1; $i <= $nm; $i++){
@@ -85,8 +86,11 @@ $imap->login($user => $pass) || die "Unable to login $user/$pass\n";
 			my @addrs = Mail::Address->parse($es->header('To'));
 			
 			my $message = $imap->get( $i ) or die $imap->errstr;
+			$message=~s/\*//g;
+
+			my $filtered_body="";
 			
-			if( $message=~/Content-Type: text\/plain.+?\n(.+)Content-Type: text\/html/s ) {
+			if( $message=~/Content-Type: text\/plain.+?\n(.+?)\n--.+?Content-Type: text\/html/s ) {
 				$filtered_body=$1;
 			}
 			
@@ -141,8 +145,7 @@ The Kudo Team";
 			print "Mail sent to ".$es->header('From')."\n";		
 			
 		}
-
 }
+	system("/usr/bin/python /var/www/TMKudos/kudos/manage.py update_index");
 
-system("/usr/bin/python /var/www/TMKudos/kudos/manage.py update_index");
 $imap->quit;

@@ -33,18 +33,13 @@ class Employee(models.Model):
         return self.first_name.lower() + '_' + self.last_name.lower() + '.jpg'
 
     def image_exists(self):
-        import httplib
-        def exists(site, path):
-            conn = httplib.HTTPConnection(site)
-            conn.request('HEAD', path)
-            response = conn.getresponse()
-            conn.close()
-            return response.status == 200
-        return exists('http://1', '/static/images/profiles/'+self.get_image_file)
+        import os
+        return os.path.exists('/var/www/TMKudos/kudos/kudosapp/static/images/profiles/'+self.get_image_file)
 
     def hashcode(self):
         import md5
-        return str(md5.new(self.first_name))
+	hashm=md5.new(self.first_name)
+        return hashm.hexdigest()
 
     def get_full_name(self):
         return self.first_name + ' ' + self.last_name
