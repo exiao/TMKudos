@@ -40,7 +40,7 @@ class Employee(models.Model):
             response = conn.getresponse()
             conn.close()
             return response.status == 200
-        return exists('localhost', '/static/images/profiles/'+self.get_image_file)
+        return exists('http://localhost', '/static/images/profiles/'+self.get_image_file)
 
     def get_full_name(self):
         return self.first_name + ' ' + self.last_name
