@@ -60,7 +60,7 @@ $(document).ready(function(){
     }
 
     $("#search-button").click(function() {
-        ajax_search(query);
+        ajax_search();
     });
     $('#main-search').live('keypress', function(event){
         if(event.keyCode == 13){

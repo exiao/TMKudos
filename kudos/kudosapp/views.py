@@ -66,7 +66,7 @@ def basic_search(request, template='search.html', load_all=True, form_class=Mode
         if form.is_valid():
             query = form.cleaned_data['q']
             results = form.search()
-            results = results.filter(content=category).order_by('created')
+            results = results.filter(content=category).order_by('get_from_employee_sent_kudos_count')
     else:
         form = form_class(searchqueryset=searchqueryset, load_all=load_all)
 
