@@ -1,4 +1,15 @@
 {% if query %}
+    {% if page.object_list %}
+        <div class="row main-row-container">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="alert alert-success">
+                    Succces
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    {% endif %}
     {% for result in page.object_list %}
         <div class="row main-row-container">
             <div class="col-lg-1"></div>
@@ -26,14 +37,13 @@
     {% empty %}
         <div class="row main-row-container">
             <div class="col-lg-1"></div>
-            <div class="col-lg-2"></div>
-            <div class="col-lg-6">
-                <div class="main-row">
-                    <p>No results found.</p>
+            <div class="col-lg-10">
+                <div class="alert alert-danger">
+                    No results found.
                 </div>
             </div>
+            <div class="col-lg-1"></div>
         </div>
-        
     {% endfor %}
 
     {% if page.has_previous or page.has_next %}
