@@ -38,7 +38,7 @@ class Employee(models.Model):
 
     def hashcode(self):
         import md5
-	hashm=md5.new(self.first_name)
+        hashm=md5.new(self.first_name)
         return hashm.hexdigest()
 
     def get_full_name(self):
