@@ -8,7 +8,9 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 class KudosAdmin(admin.ModelAdmin):
     list_display = ('subject', 'body', 'from_employee', 'to_employee', 'tags', 'created')
-    search_fields = ('from_employee', 'to_employee', 'subject', 'body', 'tags', 'created')
+    search_fields = ('subject', 'body', 'from_employee', 'to_employee', 'tags', 'created')
+    list_filter = ('flagged',)
+
 
 admin.site.register(Kudos, KudosAdmin)
 admin.site.register(Employee, EmployeeAdmin)
