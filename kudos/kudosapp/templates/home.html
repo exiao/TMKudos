@@ -1,5 +1,81 @@
 <html>
-    {% for kudos in kudos_set %}
-        <p>{{ kudos.subject }}</p>
-    {% endfor %}
+<head>
+	<title>TubeMogul Kudos</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+	<link rel="stylesheet" href="{{ STATIC_URL }}js/bootstrap.js" />
+</head>
+<body>
+	<div id="toolbar">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<img id="toolbar-logo" src="{{ STATIC_URL }}images/tubemogul.png" />
+				</div>
+				<div class="col-lg-3"></div>
+				<div class="col-lg-3 toolbar-style-right"></div>
+				<div class="col-lg-1 toolbar-button">
+					Profile
+				</div>
+				<div class="col-lg-1 toolbar-button">
+					Settings
+				</div>
+				<div class="col-lg-1 toolbar-style-left">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3"></div>
+			<div class="col-lg-6">
+				<img id="logo-center" src="{{ STATIC_URL }}images/tmkudos.png" />
+			</div>
+			<div class="col-lg-3"></div>
+		</div>
+	</div>
+	<div class="container main-container">
+		<div class="divider-15"></div>
+		<div class="row">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-10">
+				<div class="main-header">
+					Filter Kudos
+				</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<div class="row">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-10">
+				<div class="main-header">
+					Latest Kudos
+				</div>
+				    {% for kudos in kudos_set %}
+						<div class="main-row-container">
+					        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+					        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+					        <div class="main-row">{{ kudos.subject }}</div>
+						</div>
+				    {% endfor %}
+					<div class="main-row-container">
+				        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+				        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+				        <div class="main-row">Other Content</div>
+					</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+		<div class="divider-30"></div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 footer-text">
+				&copy; 2013. Tubemogul, Inc.
+			</div>
+			<div class="col-lg-4"></div>
+			<div class="col-lg-4"></div>
+		</div>
+	</div>
+</body>
 </html>
