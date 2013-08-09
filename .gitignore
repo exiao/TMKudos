@@ -3,3 +3,4 @@
 *.pyc
 local_settings.py
 static_files
+sq3.db
