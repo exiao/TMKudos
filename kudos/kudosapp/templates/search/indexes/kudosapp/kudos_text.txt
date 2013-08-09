@@ -1,6 +1,12 @@
 {{ object.subject }}
 {{ object.body }}
 {{ object.from_employee.get_full_name }}
+{{ object.from_employee.location }}
+{{ object.from_employee.email }}
+{{ object.from_employee.dept }}
 {{ object.to_employee.get_full_name }}
+{{ object.to_employee.location }}
+{{ object.to_employee.email }}
+{{ object.to_employee.dept }}
 {{ object.created }}
 {{ object.tags }}

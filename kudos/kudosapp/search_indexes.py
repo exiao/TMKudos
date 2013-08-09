@@ -17,7 +17,7 @@ class KudosIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
     from_employee = indexes.CharField(model_attr='from_employee')
     to_employee = indexes.CharField(model_attr='to_employee')
-    subject = indexes.CharField(model_attr='subject')
+    subject = indexes.CharField(model_attr='subject', boost=1.25)
     body = indexes.CharField(model_attr='body')
     tags = indexes.CharField(model_attr='tags')
     created = indexes.DateTimeField(model_attr='created')
