@@ -5,6 +5,7 @@
 .divider-60{ margin-top: 60px; }
 .divider-30{ margin-top: 30px; }
 .divider-15{ margin-top: 15px; }
+.float-left{ float: left;}
 .hidden{ display: none;}
 .inline-block{ display: inline-block; width: 100%;}
 .bar{ background-color: #aaa; height: 1px; margin: 20px auto; width: 100%; }
@@ -143,10 +144,11 @@ body{ background-color: #f5f5f5; }
 	border-radius: 3px;
 	background-color: #f8f8f8;
 	border: 1px solid #bbb;
-	color: #444;
+	color: #555;
 	cursor: pointer;
 	display: inline-block;
-	padding: 9px 20px;
+	font-size: 13px;
+	padding: 13px 20px;
 	width: 100%;
 }
 .main-row-content{ display: none;}
@@ -189,6 +191,12 @@ body{ background-color: #f5f5f5; }
 	width: 40px;
 	height: 40px;
 }
+.sender-text{
+	color: #555; 
+	font-size: 13px;
+	padding: 6px 0 0 6px;
+	width: 50px;
+}
 #logo-center{
 	cursor: pointer;
 	display: block;
@@ -200,6 +208,7 @@ body{ background-color: #f5f5f5; }
 /* ===============================================
 					FOOTER CSS
 ================================================== */
+#footer{ margin-bottom: 100px;}
 .footer-text{
 	color: #777;
 	margin-left: 20px;
