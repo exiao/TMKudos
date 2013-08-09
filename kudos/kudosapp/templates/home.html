@@ -3,7 +3,10 @@
 	<title>TubeMogul Kudos</title>
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css" />
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
-	<link rel="stylesheet" href="{{ STATIC_URL }}js/bootstrap.js" />
+	<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.js" /></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.js" /></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easing.1.3.js" /></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/main.js" /></script>
 </head>
 <body>
 	<!-- START TOOLBAR -->
@@ -14,12 +17,10 @@
 					<img id="toolbar-logo" src="{{ STATIC_URL }}images/tubemogul.png" />
 				</div>
 				<div class="col-lg-3"></div>
-				<div class="col-lg-3 toolbar-style-right"></div>
+				<div class="col-lg-3 "></div>
+				<div class="col-lg-1"></div>
 				<div class="col-lg-1 toolbar-button">
-					Profile
-				</div>
-				<div class="col-lg-1 toolbar-button">
-					Settings
+					Directory
 				</div>
 				<div class="col-lg-1 toolbar-style-left">
 				</div>
@@ -91,15 +92,22 @@
 			<div class="col-lg-1"></div>
 			<div class="col-lg-2">
 				<!-- CHANGE IMAGES HERE -->
-		        <img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
-		        <img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
-		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
+	        	<img class="main-row-from" src="{{ STATIC_URL }}images/user-eric.png" />
+	       	 	<img class="main-row-arrow" src="{{ STATIC_URL }}images/arrow.png" />
+	        	<img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }}</div>
+		        <div class="main-row">
+		        	<div class="main-row-subject">{{ kudos.subject }} (More)</div>
+		        	<div class="main-row-content">
+			        	<div class="bar"></div>
+			        	<div class="main-row-body"><img class="main-row-smallarrow" src="{{ STATIC_URL }}images/arrow-small.png"/> {{ kudos.body }}</div>
+			        </div>
+		        </div>
 			</div>
-			<div class="col-lg-2">
-		        {{ kudos.created.date }} {{ kudos.created.time }}
+			<div class="col-lg-2 main-row-date">
+		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
+		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
 		    </div>
 			<div class="col-lg-1"></div>
 		</div>
@@ -111,10 +119,11 @@
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }}</div>
+		        <div class="main-row">{{ kudos.subject }} (More)</div>
 			</div>
-			<div class="col-lg-2">
-		        {{ kudos.created.date }} {{ kudos.created.time }}
+			<div class="col-lg-2 main-row-date">
+		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
+		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
 		    </div>
 			<div class="col-lg-1"></div>
 		</div>
@@ -126,10 +135,11 @@
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }}</div>
+		        <div class="main-row">{{ kudos.subject }} (More)</div>
 			</div>
-			<div class="col-lg-2">
-		        {{ kudos.created.date }} {{ kudos.created.time }}
+			<div class="col-lg-2 main-row-date">
+		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
+		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
 		    </div>
 			<div class="col-lg-1"></div>
 		</div>
@@ -141,10 +151,11 @@
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }}</div>
+		        <div class="main-row">{{ kudos.subject }} (More)</div>
 			</div>
-			<div class="col-lg-2">
-		        {{ kudos.created.date }} {{ kudos.created.time }}
+			<div class="col-lg-2 main-row-date">
+		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
+		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
 		    </div>
 			<div class="col-lg-1"></div>
 		</div>
@@ -156,10 +167,11 @@
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }}</div>
+		        <div class="main-row">{{ kudos.subject }} (More)</div>
 			</div>
-			<div class="col-lg-2">
-		        {{ kudos.created.date }} {{ kudos.created.time }}
+			<div class="col-lg-2 main-row-date">
+		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
+		        {{ kudos.created.month }}/{{ kudos.created.day }}/{{ kudos.created.year}} {{ kudos.created.time }}
 		    </div>
 			<div class="col-lg-1"></div>
 		</div>
