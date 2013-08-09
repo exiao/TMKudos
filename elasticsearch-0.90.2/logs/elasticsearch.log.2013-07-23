@@ -1,0 +1,83 @@
+[2013-07-23 10:27:00,046][INFO ][node                     ] [Spike Freeman] {0.90.2}[17138]: initializing ...
+[2013-07-23 10:27:00,056][INFO ][plugins                  ] [Spike Freeman] loaded [], sites []
+[2013-07-23 10:27:03,377][INFO ][node                     ] [Spike Freeman] {0.90.2}[17138]: initialized
+[2013-07-23 10:27:03,377][INFO ][node                     ] [Spike Freeman] {0.90.2}[17138]: starting ...
+[2013-07-23 10:27:03,600][INFO ][transport                ] [Spike Freeman] bound_address {inet[/0:0:0:0:0:0:0:0%0:9300]}, publish_address {inet[/192.168.66.147:9300]}
+[2013-07-23 10:27:06,720][INFO ][cluster.service          ] [Spike Freeman] new_master [Spike Freeman][1pSdObn8RdGatNuU5rgUZw][inet[/192.168.66.147:9300]], reason: zen-disco-join (elected_as_master)
+[2013-07-23 10:27:06,787][INFO ][discovery                ] [Spike Freeman] elasticsearch/1pSdObn8RdGatNuU5rgUZw
+[2013-07-23 10:27:06,815][INFO ][http                     ] [Spike Freeman] bound_address {inet[/0:0:0:0:0:0:0:0%0:9200]}, publish_address {inet[/192.168.66.147:9200]}
+[2013-07-23 10:27:06,816][INFO ][node                     ] [Spike Freeman] {0.90.2}[17138]: started
+[2013-07-23 10:27:06,901][INFO ][gateway                  ] [Spike Freeman] recovered [0] indices into cluster_state
+[2013-07-23 10:27:08,971][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:25:56,878][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:25:57,459][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:26:33,092][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:26:33,326][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:27:52,219][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:27:52,398][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:28:23,551][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:28:23,743][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:29:04,317][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:29:04,523][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:29:16,978][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:29:17,184][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:29:44,912][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:29:45,079][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:29:45,320][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] create_mapping [ad]
+[2013-07-23 11:30:37,604][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:30:37,759][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:30:37,804][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] create_mapping [ad]
+[2013-07-23 11:32:59,512][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:32:59,749][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:32:59,812][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] create_mapping [ad]
+[2013-07-23 11:34:03,290][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:34:03,435][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:34:03,483][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] create_mapping [ad]
+[2013-07-23 11:34:28,976][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:34:29,119][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:34:29,164][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] create_mapping [ad]
+[2013-07-23 11:34:29,388][DEBUG][action.bulk              ] [Spike Freeman] [promo2][2] failed to execute bulk item (index) index {[promo2][ad][1], source[{"account_id":1,"ad_class":"preroll","ad_duration":30,"ad_key":"adkey1234","ad_name":"test_name","ad_template":"preroll_15","ad_template_name":"Preroll 15-second","admin_review_status":"Reviewed","campaign_key":"cpkey_1234","id":1,"promoted_video_id":2,"promoted_video_key":"pvkey1234","proxy_url":"http://yes.com","rtb_ad_type":"INSTREAM","title":"test_name","status":"Active","created":"2011-08-02 11:22:22.0","modified":"2011-08-04 01:22:22.0"}]}
+org.elasticsearch.index.mapper.MapperParsingException: failed to parse [created]
+	at org.elasticsearch.index.mapper.core.AbstractFieldMapper.parse(AbstractFieldMapper.java:396)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.serializeValue(ObjectMapper.java:599)
+	at org.elasticsearch.index.mapper.object.ObjectMapper.parse(ObjectMapper.java:467)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:507)
+	at org.elasticsearch.index.mapper.DocumentMapper.parse(DocumentMapper.java:451)
+	at org.elasticsearch.index.shard.service.InternalIndexShard.prepareIndex(InternalIndexShard.java:327)
+	at org.elasticsearch.action.bulk.TransportShardBulkAction.shardIndexOperation(TransportShardBulkAction.java:381)
+	at org.elasticsearch.action.bulk.TransportShardBulkAction.shardOperationOnPrimary(TransportShardBulkAction.java:155)
+	at org.elasticsearch.action.support.replication.TransportShardReplicationOperationAction$AsyncShardOperationAction.performOnPrimary(TransportShardReplicationOperationAction.java:532)
+	at org.elasticsearch.action.support.replication.TransportShardReplicationOperationAction$AsyncShardOperationAction$1.run(TransportShardReplicationOperationAction.java:430)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:680)
+Caused by: org.elasticsearch.index.mapper.MapperParsingException: failed to parse date field [2011-08-02 11:22:22.0], tried both date format [yyyy-MM-dd HH:mm:ss], and timestamp number with locale [null]
+	at org.elasticsearch.index.mapper.core.DateFieldMapper.parseStringValue(DateFieldMapper.java:464)
+	at org.elasticsearch.index.mapper.core.DateFieldMapper.innerParseCreateField(DateFieldMapper.java:413)
+	at org.elasticsearch.index.mapper.core.NumberFieldMapper.parseCreateField(NumberFieldMapper.java:167)
+	at org.elasticsearch.index.mapper.core.AbstractFieldMapper.parse(AbstractFieldMapper.java:385)
+	... 12 more
+Caused by: java.lang.IllegalArgumentException: Invalid format: "2011-08-02 11:22:22.0" is malformed at ".0"
+	at org.elasticsearch.common.joda.time.format.DateTimeFormatter.parseMillis(DateTimeFormatter.java:752)
+	at org.elasticsearch.index.mapper.core.DateFieldMapper.parseStringValue(DateFieldMapper.java:458)
+	... 15 more
+[2013-07-23 11:36:49,366][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] deleting index
+[2013-07-23 11:36:49,534][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:36:49,581][INFO ][cluster.metadata         ] [Spike Freeman] [promo2] create_mapping [ad]
+[2013-07-23 11:37:05,436][INFO ][node                     ] [Spike Freeman] {0.90.2}[17138]: stopping ...
+[2013-07-23 11:37:05,579][INFO ][node                     ] [Spike Freeman] {0.90.2}[17138]: stopped
+[2013-07-23 11:37:05,579][INFO ][node                     ] [Spike Freeman] {0.90.2}[17138]: closing ...
+[2013-07-23 11:37:05,619][INFO ][node                     ] [Spike Freeman] {0.90.2}[17138]: closed
+[2013-07-23 11:37:07,616][INFO ][node                     ] [Puma] {0.90.2}[17478]: initializing ...
+[2013-07-23 11:37:07,629][INFO ][plugins                  ] [Puma] loaded [], sites []
+[2013-07-23 11:37:10,643][INFO ][node                     ] [Puma] {0.90.2}[17478]: initialized
+[2013-07-23 11:37:10,644][INFO ][node                     ] [Puma] {0.90.2}[17478]: starting ...
+[2013-07-23 11:37:10,779][INFO ][transport                ] [Puma] bound_address {inet[/0:0:0:0:0:0:0:0%0:9300]}, publish_address {inet[/192.168.66.147:9300]}
+[2013-07-23 11:37:13,859][INFO ][cluster.service          ] [Puma] new_master [Puma][pWydu4uWStiX37pHbGYWBg][inet[/192.168.66.147:9300]], reason: zen-disco-join (elected_as_master)
+[2013-07-23 11:37:13,903][INFO ][discovery                ] [Puma] elasticsearch/pWydu4uWStiX37pHbGYWBg
+[2013-07-23 11:37:13,925][INFO ][http                     ] [Puma] bound_address {inet[/0:0:0:0:0:0:0:0%0:9200]}, publish_address {inet[/192.168.66.147:9200]}
+[2013-07-23 11:37:13,926][INFO ][node                     ] [Puma] {0.90.2}[17478]: started
+[2013-07-23 11:37:14,998][INFO ][gateway                  ] [Puma] recovered [1] indices into cluster_state
+[2013-07-23 11:37:14,998][INFO ][cluster.metadata         ] [Puma] [promo2] deleting index
+[2013-07-23 11:37:15,309][INFO ][cluster.metadata         ] [Puma] [promo2] creating index, cause [api], shards [5]/[1], mappings []
+[2013-07-23 11:37:15,432][INFO ][cluster.metadata         ] [Puma] [promo2] create_mapping [ad]

@@ -1,0 +1,17 @@
+[2013-08-08 21:45:16,398][INFO ][node                     ] [Conquistador] {0.90.2}[8183]: initializing ...
+[2013-08-08 21:45:16,415][INFO ][plugins                  ] [Conquistador] loaded [], sites []
+[2013-08-08 21:45:19,564][INFO ][node                     ] [Conquistador] {0.90.2}[8183]: initialized
+[2013-08-08 21:45:19,564][INFO ][node                     ] [Conquistador] {0.90.2}[8183]: starting ...
+[2013-08-08 21:45:19,703][INFO ][transport                ] [Conquistador] bound_address {inet[/0:0:0:0:0:0:0:0%0:9300]}, publish_address {inet[/192.168.2.35:9300]}
+[2013-08-08 21:45:22,786][INFO ][cluster.service          ] [Conquistador] new_master [Conquistador][GZD-b6yRSJir7tXPVYXoUQ][inet[/192.168.2.35:9300]], reason: zen-disco-join (elected_as_master)
+[2013-08-08 21:45:22,830][INFO ][discovery                ] [Conquistador] elasticsearch/GZD-b6yRSJir7tXPVYXoUQ
+[2013-08-08 21:45:22,845][INFO ][http                     ] [Conquistador] bound_address {inet[/0:0:0:0:0:0:0:0%0:9200]}, publish_address {inet[/192.168.2.35:9200]}
+[2013-08-08 21:45:22,845][INFO ][node                     ] [Conquistador] {0.90.2}[8183]: started
+[2013-08-08 21:45:23,732][INFO ][gateway                  ] [Conquistador] recovered [1] indices into cluster_state
+[2013-08-08 21:45:28,247][INFO ][cluster.metadata         ] [Conquistador] [haystack] creating index, cause [api], shards [5]/[1], mappings []
+[2013-08-08 21:45:28,449][INFO ][cluster.metadata         ] [Conquistador] [haystack] create_mapping [modelresult]
+[2013-08-08 21:45:28,685][INFO ][cluster.metadata         ] [Conquistador] [haystack] update_mapping [modelresult] (dynamic)
+[2013-08-08 21:45:44,348][INFO ][cluster.metadata         ] [Conquistador] [haystack] deleting index
+[2013-08-08 21:45:44,487][INFO ][cluster.metadata         ] [Conquistador] [haystack] creating index, cause [api], shards [5]/[1], mappings []
+[2013-08-08 21:45:44,584][INFO ][cluster.metadata         ] [Conquistador] [haystack] create_mapping [modelresult]
+[2013-08-08 21:45:44,731][INFO ][cluster.metadata         ] [Conquistador] [haystack] update_mapping [modelresult] (dynamic)
