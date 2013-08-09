@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	$('.main-row').on('click', function(){
 		$content = $(this).find('.main-row-content');
 		if(!$content.hasClass('display-content')){
@@ -12,11 +11,31 @@ $(document).ready(function(){
 	/* ===========================================================================
                             .:: SEARCH ::. 
     =========================================================================== */
-	$('#main-search').val("{{ query }}");
+    var query = $("#main-search").val();
+    ajax_search(query);
 
-    $('#portal-searchbox').live('keypress', function(event){
+	function ajax_search(query) {
+	    data = {};
+	    data['q'] = query;
+	    $.ajax({
+	      url: "/search/",
+	      type: "GET",
+	      cache: false,
+	      data: data,
+	      dataType: "text",
+	      success: function(html){
+	        $(".search-results-container").html(html);
+	      }
+	    });
+	}
+
+	$("#search-button").click(function() {
+	    var query = $("#main-search").val();
+	    ajax_search(query);
+	});
+    $('#main-search').live('keypress', function(event){
         if(event.keyCode == 13){
-            $('#portal-searchbox-button').click();
+            $('#search-button').click();
         }
     });
 	/* ===========================================================================
