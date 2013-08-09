@@ -48,3 +48,20 @@ class Kudos(models.Model):
     def get_delimited_tags(self):
         tags = self.tags[:-1].split(',')
         return tags
+
+    @property
+    def get_from_employee_sent_kudos_count(self):
+        return self.from_employee.sent_kudos.count()
+
+    @property
+    def get_to_employee_sent_kudos_count(self):
+        return self.to_employee.sent_kudos.count()
+
+    @property
+    def get_from_employee_received_kudos_count(self):
+        return self.from_employee.received_kudos.count()
+
+    @property
+    def get_to_employee_received_kudos_count(self):
+        return self.from_employee.received_kudos.count()
+

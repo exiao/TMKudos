@@ -37,9 +37,9 @@ $(document).ready(function(){
             }
         });*/
         var query = $("#main-search").val();
-        var dept = $('#btn-dept span').text();
-        var type = $('#btn-type span').text(); //top senders/receivers
-        var category = $('#btn-cat span').text(); //tags
+        var dept = $('#btn-dept span').val();
+        var type = $('#btn-type span').val(); //top senders/receivers
+        var category = $('#btn-cat span').val(); //tags
 
         data = {};
         data['q'] = query;
