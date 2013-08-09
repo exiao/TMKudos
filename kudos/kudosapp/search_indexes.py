@@ -20,11 +20,11 @@ class KudosIndex(indexes.SearchIndex, indexes.Indexable):
     subject = indexes.CharField(model_attr='subject')
     body = indexes.CharField(model_attr='body')
     tags = indexes.CharField(model_attr='tags')
-    created_date = indexes.DateTimeField(model_attr='created')
+    created = indexes.DateTimeField(model_attr='created')
 
     def get_model(self):
         return Kudos
 
     def index_queryset(self, using=None):
         """Used when the entire index for model is updated."""
-        return self.get_model().objects.filter(pub_date__lte=datetime.datetime.now())
+        return self.get_model().objects.filter(created__lte=datetime.datetime.now())
