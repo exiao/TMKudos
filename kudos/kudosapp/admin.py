@@ -7,7 +7,8 @@ class EmployeeAdmin(admin.ModelAdmin):
     search_fields = ('first_name','last_name', 'dept', 'location', 'email')
 
 class KudosAdmin(admin.ModelAdmin):
-    list_display = ()
+    list_display = ('from_employee', 'to_employee', 'subject', 'body', 'tags', 'created')
+    search_fields = ('from_employee', 'to_employee', 'subject', 'body', 'tags', 'created')
 
-admin.site.register(Kudos)
+admin.site.register(Kudos, KudosAdmin)
 admin.site.register(Employee, EmployeeAdmin)
