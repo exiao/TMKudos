@@ -35,7 +35,7 @@ class Employee(models.Model):
     def image_exists(self):
         import os
         file = '/var/www/TMKudos/kudos/kudosapp/static/images/profiles/'+self.get_image_file()
-        return file;
+        return os.path.exists(file);
 
     def hashcode(self):
         import md5
