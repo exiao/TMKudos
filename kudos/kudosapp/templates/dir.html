@@ -60,7 +60,7 @@
 					{% else %}
 						<img class="employee-pic" src="http://gravatar.com/avatar/{{ employee.hashcode }}?d=wavatar" />
 					{% endif %}
-					<span class="employee-text">{{ employee.full_name }}</span>
+					<span class="employee-text">{{ employee.get_full_name }}</span>
 					<span class="employee-text">
 						Sent: 
 						{% if emplyee.sent_kudos %}
