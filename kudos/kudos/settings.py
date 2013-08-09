@@ -140,6 +140,7 @@ INSTALLED_APPS = (
     'kudosapp',
     'django_evolution',
     'social_auth',
+    'oauth2'
 )
 
 # A sample logging configuration. The only tangible logging
