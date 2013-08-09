@@ -55,7 +55,7 @@
 				<div id="main-results">
 				{% for employee in employee_set %}
 				<div class="employee-row">
-					{% if employee.get_image_file %}
+					{% if employee.image_exists %}
 					<img class="employee-pic" src="{{ STATIC_URL }}images/profiles/{{ employee.get_image_file }}" />
 					{% else %}
 						<img class="employee-pic" src="http://gravatar.com/avatar/c38b7e73302770ac579edaa7b2461850?d=wavatar" />

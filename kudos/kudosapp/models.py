@@ -32,6 +32,16 @@ class Employee(models.Model):
     def get_image_file(self):
         return self.first_name.lower() + '_' + self.last_name.lower() + '.jpg'
 
+    def image_exists(self):
+        import httplib
+        def exists(site, path):
+            conn = httplib.HTTPConnection(site)
+            conn.request('HEAD', path)
+            response = conn.getresponse()
+            conn.close()
+            return response.status == 200
+        return exists('http://172.16.129.22', '/static/images/profiles/'+self.get_image_file)
+
     def get_full_name(self):
         return self.first_name + ' ' + self.last_name
 
