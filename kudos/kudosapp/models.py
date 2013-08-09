@@ -32,6 +32,9 @@ class Employee(models.Model):
     def get_image_file(self):
         return self.first_name + '_' + self.last_name + '.jpg'
 
+    def get_full_name(self):
+        return self.first_name + ' ' + self.last_name
+
 class Kudos(models.Model):
     from_employee = models.ForeignKey('employee', related_name='sent_kudos')
     to_employee = models.ForeignKey('employee', related_name='received_kudos')
@@ -40,3 +43,8 @@ class Kudos(models.Model):
     body = models.TextField()
     flagged = models.BooleanField(default=False)
     tags = models.CharField(max_length=50, null=True, blank=True)
+    message_id = models.CharField(max_length=255, null=True, blank=True)
+
+    def get_delimited_tags(self):
+        tags = self.tags[:-1].split(',')
+        return tags

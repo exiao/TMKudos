@@ -1,0 +1,6 @@
+{{ object.subject }}
+{{ object.body }}
+{{ object.from_employee.get_full_name }}
+{{ object.to_employee.get_full_name }}
+{{ object.created }}
+{{ object.tags }}

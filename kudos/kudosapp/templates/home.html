@@ -52,14 +52,14 @@
 		<div class="row">
 			<div class="col-lg-1"></div>
 			<div class="col-lg-10">
-				<input id="main-search" type="text" class="form-control" placeholder="E.g. Brett Wilson, CTO" >
+				<input id="main-search" type="text" class="form-control" placeholder="E.g. Brett Wilson, CTO, AdOps" >
 			</div>
 			<div class="col-lg-1"></div>
 		</div>
 		<div class="row">
 			<div class="col-lg-1"></div>
 			<div class="col-lg-2">
-				<input class="btn btn-success inline-block" value="Sender Type">
+				<input class="btn btn-success inline-block" value="Department">
 			</div>
 			<div class="col-lg-2">
 				<input class="btn btn-success inline-block" value="Sender Type">
@@ -97,6 +97,7 @@
 	        	<img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
+<<<<<<< HEAD
 		        <div class="main-row">
 		        	<div class="main-row-subject">{{ kudos.subject }} (More)</div>
 		        	<div class="main-row-content">
@@ -168,6 +169,15 @@
 			</div>
 			<div class="col-lg-6">
 		        <div class="main-row">{{ kudos.subject }} (More)</div>
+=======
+		        <div class="main-row">{{ kudos.subject }}, 
+		        	{% for tag in kudos.get_delimited_tags %}
+		        		{% if tag %}
+		        			#{{ tag }}
+		        		{% endif %}
+		        	{% endfor %}
+		        </div>
+>>>>>>> a271ca32cf5600e038f17bc60b7a33aa713bab16
 			</div>
 			<div class="col-lg-2 main-row-date">
 		        <img class="main-row-clock" src="{{ STATIC_URL }}images/clock.png" />
