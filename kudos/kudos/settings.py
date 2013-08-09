@@ -137,10 +137,12 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'haystack',
     'kudosapp',
     'django_evolution',
     'social_auth',
-    'oauth2'
+    'oauth2',
+    'pyelasticsearch'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -170,4 +172,12 @@ LOGGING = {
             'propagate': True,
         },
     }
+}
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+        'URL': 'http://127.0.0.1:9200/',
+        'INDEX_NAME': 'haystack',
+    },
 }
