@@ -46,5 +46,5 @@ class Kudos(models.Model):
     message_id = models.CharField(max_length=255, null=True, blank=True)
 
     def get_delimited_tags(self):
-        tags = self.tags.split(',')
+        tags = self.tags[:-1].split(',')
         return tags
