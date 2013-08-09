@@ -34,7 +34,7 @@ class Employee(models.Model):
 
     def image_exists(self):
         import os
-        file = '/var/www/TMKudos/kudos/kudosapp/static/images/profiles/'+self.get_image_file();
+        file = '/var/www/TMKudos/kudos/kudosapp/static/images/profiles/'+self.get_image_file()
         return file;
 
     def hashcode(self):
