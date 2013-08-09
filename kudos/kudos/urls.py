@@ -4,9 +4,13 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+from haystack.views import SearchView
+
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'kudosapp.views.home', name='home'),
+    #url(r'^$', 'kudosapp.views.home', name='home'),
+    url(r'^$', 'kudosapp.views.basic_search', name='search'),
+    # url(r'^$', SearchView(), name='haystack_search'),
     # url(r'^kudos/', include('kudos.foo.urls')),
 
     #Uncomment the admin/doc line below to enable admin documentation:

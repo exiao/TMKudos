@@ -17,14 +17,14 @@ class KudosIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
     from_employee = indexes.CharField(model_attr='from_employee')
     to_employee = indexes.CharField(model_attr='to_employee')
-    subject = indexes.CharField(model_attr='subject')
+    subject = indexes.CharField(model_attr='subject', boost=1.25)
     body = indexes.CharField(model_attr='body')
     tags = indexes.CharField(model_attr='tags')
-    created_date = indexes.DateTimeField(model_attr='created')
+    created = indexes.DateTimeField(model_attr='created')
 
     def get_model(self):
         return Kudos
 
     def index_queryset(self, using=None):
         """Used when the entire index for model is updated."""
-        return self.get_model().objects.filter(pub_date__lte=datetime.datetime.now())
+        return self.get_model().objects.filter(created__lte=datetime.datetime.now())
