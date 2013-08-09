@@ -96,8 +96,9 @@
 		        <img class="main-row-to" src="{{ STATIC_URL }}images/user-jeff.png" />
 			</div>
 			<div class="col-lg-6">
-		        <div class="main-row">{{ kudos.subject }}, {% for tag in kudos.get_delimited_tags %}
-		        	#{{ tag }}
+		        <div class="main-row">{{ kudos.subject }}, 
+		        	{% for tag in kudos.get_delimited_tags %}
+		        		#{{ tag }}
 		        	{% endfor %}
 		        </div>
 			</div>
