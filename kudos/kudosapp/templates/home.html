@@ -14,14 +14,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3">
-					<a href="/"><img id="toolbar-logo" src="{{ STATIC_URL }}images/tubemogul.png" /></a>
+					<img id="toolbar-logo" src="{{ STATIC_URL }}images/tubemogul.png" />
 				</div>
 				<div class="col-lg-3"></div>
 				<div class="col-lg-3 "></div>
 				<div class="col-lg-1 toolbar-style-right"></div>
-				<a href="/directory/"><div class="col-lg-1 toolbar-button">
-					Directory
-				</div></a>
+				<div class="col-lg-1 toolbar-button">
+					<a href="/directory/">Directory</a>
+				</div>
 				<div class="col-lg-1 toolbar-style-left">
 				</div>
 			</div>
@@ -62,17 +62,39 @@
 			<div class="col-lg-2">
                 <div class="btn-group" style="width: 100%;">
                     <button id="btn-dept" type="button" class="btn btn-block btn-success dropdown-toggle" data-toggle="dropdown" >
+                    	<input class="btn-value" type="hidden" value="">
                         <span class="btn-option">All Departments</span> <span class="caret"></span>
                     </button>
                     <ul class="drop-menu hidden">
                         <li class="dropdown-top" style="padding: 14px 14px;"><span>Department</span></li>
-                        <li style="padding: 14px 14px;"><span>AdOps</span></li>
-                        <li style="padding: 14px 14px;"><span>Accounting</span></li>
-                        <li style="padding: 14px 14px;"><span>Engineering</span></li>
-                        <li style="padding: 14px 14px;"><span>HR/Recruiting</span></li>
-                        <li style="padding: 14px 14px;"><span>Marketing</span></li>
-                        <li style="padding: 14px 14px;"><span>Sales</span></li>
-                        <li class="dropdown-bott" style="padding: 14px 14px;"><span>SysOps</span></li>
+                        <li style="padding: 14px 14px;">
+                        	<span>AdOps</span>
+                        	<input type="hidden" value="AM">
+                        </li>
+                        <li style="padding: 14px 14px;">
+                        	<span>Accounting</span>
+                        	<input type="hidden" value="ACCOUNTING">
+                        </li>
+                        <li style="padding: 14px 14px;">
+                        	<span>Engineering</span>
+                        	<input type="hidden" value="ENG">
+                    	</li>
+                        <li style="padding: 14px 14px;">
+                        	<span>HR/Recruiting</span>
+                        	<input type="hidden" value="HR">
+                        </li>
+                        <li style="padding: 14px 14px;">
+                        	<span>Marketing</span>
+                        	<input type="hidden" value="MARKETING">
+                        </li>
+                        <li style="padding: 14px 14px;">
+                        	<span>Sales</span>
+                        	<input type="hidden" value="SALES">
+                        </li>
+                        <li class="dropdown-bott" style="padding: 14px 14px;">
+                        	<span>SysOps</span>
+                        	<input type="hidden" value="OPS">
+                        </li>
                     </ul>
                 </div>
 			</div>

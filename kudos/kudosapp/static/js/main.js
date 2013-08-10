@@ -37,9 +37,9 @@ $(document).ready(function(){
             }
         });*/
         var query = $("#main-search").val();
-        var dept = $('#btn-dept span').text();
-        var type = $('#btn-type span').text(); //top senders/receivers
-        var category = $('#btn-cat span').text(); //tags
+        var dept = $('#btn-dept .btn-value').val();
+        var type = $('#btn-type .btn-value').val(); //top senders/receivers
+        var category = $('#btn-cat .btn-value').val(); //tags
 
         data = {};
         data['q'] = query;
@@ -90,8 +90,10 @@ $(document).ready(function(){
     });
     $('.drop-menu li').live('click', function(){
         var option = $(this).find('span').text();
+        var value = $(this).find('input').val();
         $btn_group = $(this).parent().parent();
         $btn_group.find('.btn-option').text(option);
+        $btn_group.find('.btn-value').val(value);
         $btn_group.find('.dropdown-toggle').click();
         var default_text = ['All Departments', 'Latest Kudos', 'All Categories'];
         if($.inArray(option, default_text) > -1){

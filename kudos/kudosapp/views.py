@@ -11,6 +11,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from haystack.forms import ModelSearchForm, FacetedSearchForm
 from haystack.query import EmptySearchQuerySet, SearchQuerySet
+from haystack.inputs import AutoQuery
 
 RESULTS_PER_PAGE = getattr(settings, 'HAYSTACK_SEARCH_RESULTS_PER_PAGE', 20)
 
@@ -51,24 +52,36 @@ def basic_search(request, template='search.html', load_all=True, form_class=Mode
           The query received by the form.
     """
     query = ''
-    results = EmptySearchQuerySet()
 
-
-    """dept = request.GET.get('dept')
+    dept = request.GET.get('dept')
+    if dept[:3].upper() == 'ENG':
+        dept = 'Eng'
     sort_type = request.GET.get('type')
     category = request.GET.get('category')
-    print(category)
+    query = request.GET.get('q')
 
     results = SearchQuerySet()
-    results.filter(content=category)"""
+    #results.filter(content=category)
 
-    if request.GET.get('q'):
-        form = form_class(request.GET, searchqueryset=searchqueryset, load_all=load_all)
+    """if not (request.GET.get('dept')
+        and request.GET.get('type')
+        and request.GET.get('category')
+        and request.GET.get('q')):
+        results = results.all()"""
+    if query:
+        results = results.filter(content=AutoQuery(query))
+        """form = form_class(request.GET, searchqueryset=searchqueryset, load_all=load_all)
         if form.is_valid():
             query = form.cleaned_data['q']
             results = form.search()
     else:
-        form = form_class(searchqueryset=searchqueryset, load_all=load_all)
+        form = form_class(searchqueryset=searchqueryset, load_all=load_all)"""
+    if dept:
+        results = results.filter_or(dept_to__contains=dept).filter_or(dept_from__contains=dept)
+    if sort_type:
+        results = results.order_by(sort_type)
+    if category:
+        results = results.filter(content__contains=category)
 
     paginator = Paginator(results, results_per_page or RESULTS_PER_PAGE)
 
@@ -78,11 +91,9 @@ def basic_search(request, template='search.html', load_all=True, form_class=Mode
         raise Http404("No such page of results!")
 
     context = {
-        'form': form,
         'page': page,
         'paginator': paginator,
         'query': query,
-        'suggestion': None,
     }
     kudos_set = Kudos.objects.order_by("created")
     context['kudos_set'] = kudos_set
