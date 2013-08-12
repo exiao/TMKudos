@@ -233,7 +233,7 @@ body{ background-color: #f5f5f5; }
 	font-size: 13px;
 	margin: 4px 0;
 }
-.employee-name{ height: 40px;}
+.employee-name{ height: 45px; font-weight:500; font-size:15px;}
 .employee-pic{
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
